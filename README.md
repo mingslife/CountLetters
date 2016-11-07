@@ -1,0 +1,2 @@
+# CountLetters
+大一时初学JavaScript时实验室布置的作业
