@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Count Letters</title>
+		<style type="text/css" rel="stylesheet">
+			body {margin:0;padding:0;background-color:#555555;}
+			#content {width:400px;height:400px;margin:50px auto 0;background:url("cover.png")}
+			#myTextarea {position:relative;top:48px;left:25px;width:350px;height:250px;border:none;font-family:"Comic Sans MS";font-size:18px;color:#333333;line-height:30px;background:url("background.png");overflow:hidden}
+			#myReset {float:left;position:relative;top:55px;left:200px;width:75px;height:30px;border:none;background:url("reset.png")}
+			#myButton {float:left;position:relative;top:55px;left:220px;width:75px;height:30px;border:none;background:url("button.png")}
+			#flag {float:left;position:relative;top:30px;left:-60px;width:60px;height:30px}
+		</style>
+		<script type="text/javascript">
+			function welcome() {
+				alert("Welcome!");
+			}
+			function cleanTextarea() {
+				document.getElementById("myTextarea").value = "";
+			}
+			function countLetters() {
+				var string = document.getElementById("myTextarea").value;
+				var numberOfLetters_lower = 0;
+				var numberOfLetters_upper = 0;
+				var numberOfNumbers = 0;
+				var numberOfOtherCharacters = 0;
+				for (var i = 0; i < string.length; i++) {
+					if (string.charAt(i) >= 'a' && string.charAt(i) <= 'z')
+						numberOfLetters_lower++;
+					else if (string.charAt(i) >= 'A' && string.charAt(i) <= 'Z')
+						numberOfLetters_upper++;
+					else if (string.charAt(i) >= '0' && string.charAt(i) <= '9')
+						numberOfNumbers++;
+					else
+						numberOfOtherCharacters++;
+				}
+				alert("Lower-case Letters: " + numberOfLetters_lower + "\nUpper-case Letters: " + numberOfLetters_upper + "\nNumbers: " + numberOfNumbers + "\nOther Characters: " + numberOfOtherCharacters + "\nTotal: " + string.length);
+			}
+		</script>
+	</head>
+	
+	<body onload="welcome()">
+		<div id="content">
+			<img src="flag.png" id="flag" />
+			<textarea id="myTextarea">06/27/14 Ming: Welcome to view this web page. This is a textarea. Please type your text here and this web page will show a message to sort out how many letters you typed after you press OK button. That's all. Enjoy yourself! Thank you!</textarea>
+			<input type="button" onclick="cleanTextarea()" id="myReset" />
+			<input type="button" onclick="countLetters()" id="myButton" />
+		</div>
+	</body>
+</html>
+<!-- Ming -->
